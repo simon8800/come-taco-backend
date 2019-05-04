@@ -2,7 +2,7 @@
 
 class Api::V1::UsersController < ApplicationController
   # go to http://localhost:3000/api/v1/users
-  
+
   def index
     @users = User.all
 
