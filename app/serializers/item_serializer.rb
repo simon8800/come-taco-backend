@@ -3,5 +3,5 @@
 class ItemSerializer < ActiveModel::Serializer
   # has_many :orders
   # has_many :users, through: :orders
-  attributes :id, :name, :description, :price, :category
+  attributes :id, :name, :description, :price, :category, :imgURL
 end
