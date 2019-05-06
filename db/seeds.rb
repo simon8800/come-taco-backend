@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 Item.destroy_all
 
 # appetizers
-Item.create(name: "Queso", description: "Homemade cheese dip with Mexican spices and pico de gallo", price: 9, category:"appetizers", imgURL: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/4/8/1/FNM_050114-Double-Chile-Queso-Dip-Recipe_s4x3.jpg.rend.hgtvcom.616.462.suffix/1397163257399.jpeg")
-Item.create(name: "Flautas", description: "Ancho brisket, roasted red peppers and cheese, served with tomatillo salsa", price: 9, category:"appetizers", imgURL: "https://thefoodcharlatan.com/wp-content/uploads/2013/05/IMG_3194-e1367551208242.jpg")
-Item.create(name: "Chicken Empanadas", description: "Served with tomatillo salsa and chipotle salsa rojo", price: 11, category:"appetizers", imgURL: "http://www.bemindfulbehuman.com/wp-content/uploads/MG_9411.chicken.empanadas.final1_.png")
-Item.create(name: "Cheese Quesadilla",description: "Served with sour cream and guacamole and topped with fresh jalapenos", price: 9, category:"appetizers", imgURL: "https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/201408-xl-pimento-cheese-quesadillas.jpg?itok=uqizsUaC")
-Item.create(name: "Crispy Wings",description:  "Choices: Buffalo, BBQ, Soy Garlic, and Sweet Chili", price: 11, category:"appetizers", imgURL: "https://thebakermama.com/wp-content/uploads/2014/06/Crispy-Sweet-Spicy-Chicken-Wings-2-300x225.jpg")
-Item.create(name: "Guacamole", description: "Made with only the freshest Michoacano avocado, onion and cilantro. Served with golden tortilla chips", price: 10, category:"appetizers", imgURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQClnMPpgjXvMqtpbkubcgmruFGS2dlXY_F4CpsriOG2Vz6vNgq")
-Item.create(name: "Nachos", description: "Made with only the freshest Michoacano avocado, onion and cilantro. Served with golden tortilla chips", price: 11, category:"appetizers", imgURL: "https://www.kitchensanctuary.com/wp-content/uploads/2017/12/Crispy-Leftover-Turkey-Nachos-Recipe-square-FS.jpg")
-
+Item.create(name: 'Queso', description: 'Homemade cheese dip with Mexican spices and pico de gallo', price: 9, category: 'appetizers', imgURL: 'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/4/8/1/FNM_050114-Double-Chile-Queso-Dip-Recipe_s4x3.jpg.rend.hgtvcom.616.462.suffix/1397163257399.jpeg')
+Item.create(name: 'Flautas', description: 'Ancho brisket, roasted red peppers and cheese, served with tomatillo salsa', price: 9, category: 'appetizers', imgURL: 'https://thefoodcharlatan.com/wp-content/uploads/2013/05/IMG_3194-e1367551208242.jpg')
+Item.create(name: 'Chicken Empanadas', description: 'Served with tomatillo salsa and chipotle salsa rojo', price: 11, category: 'appetizers', imgURL: 'http://www.bemindfulbehuman.com/wp-content/uploads/MG_9411.chicken.empanadas.final1_.png')
+Item.create(name: 'Cheese Quesadilla', description: 'Served with sour cream and guacamole and topped with fresh jalapenos', price: 9, category: 'appetizers', imgURL: 'https://cdn-image.foodandwine.com/sites/default/files/styles/medium_2x/public/201408-xl-pimento-cheese-quesadillas.jpg?itok=uqizsUaC')
+Item.create(name: 'Crispy Wings', description: 'Choices: Buffalo, BBQ, Soy Garlic, and Sweet Chili', price: 11, category: 'appetizers', imgURL: 'https://thebakermama.com/wp-content/uploads/2014/06/Crispy-Sweet-Spicy-Chicken-Wings-2-300x225.jpg')
+Item.create(name: 'Guacamole', description: 'Made with only the freshest Michoacano avocado, onion and cilantro. Served with golden tortilla chips', price: 10, category: 'appetizers', imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQClnMPpgjXvMqtpbkubcgmruFGS2dlXY_F4CpsriOG2Vz6vNgq')
+Item.create(name: 'Nachos', description: 'Made with only the freshest Michoacano avocado, onion and cilantro. Served with golden tortilla chips', price: 11, category: 'appetizers', imgURL: 'https://www.kitchensanctuary.com/wp-content/uploads/2017/12/Crispy-Leftover-Turkey-Nachos-Recipe-square-FS.jpg')
 
 # main
 Item.create( name: "Chicken Enchiladas", description: "Tacos stuffed with chicken, coated in smooth salsa roja, verde or bandera and a touch of crema Mexicana, topped with lettuce, melted cheese, onion and avocado", price: 13, category:"main", imgURL: "https://images-gmi-pmc.edge-generalmills.com/e33eb988-2068-4a09-b07e-69f60ea2af3f.jpg")
