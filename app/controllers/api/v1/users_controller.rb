@@ -2,7 +2,7 @@
 
 class Api::V1::UsersController < ApplicationController
   # go to http://localhost:3000/api/v1/users
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized
 
   def index
     @users = User.all
@@ -31,9 +31,13 @@ class Api::V1::UsersController < ApplicationController
     @user.update(user_params)
   end
 
+  def profile
+    render json: { user: UserSerializer.new(current_user)}, status: :accepted
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
+    params.permit(:first_name, :last_name, :email, :password)
   end
 end

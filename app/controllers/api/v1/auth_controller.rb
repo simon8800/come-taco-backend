@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 class Api::V1::AuthController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized
 
   def create
+    puts user_login_params
     @user = User.find_by(email: user_login_params[:email])
-    if @user&.authenticate(user_login_params[:password])
+    if @user && @user.authenticate(user_login_params[:password])
       token = encode_token(user_id: @user.id)
       render json: { user: UserSerializer.new(@user), jwt: token }, status: :accepted
     else
@@ -16,7 +17,7 @@ class Api::V1::AuthController < ApplicationController
   private
 
   def user_login_params
-    params.require(:user).permit(:email, :password)
+    params.permit(:email, :password)
   end
 
 end
