@@ -2,6 +2,7 @@
 
 class Api::V1::ItemsController < ApplicationController
   # go to http://localhost:3000/api/v1/items
+  skip_before_action :authorized
 
   def index
     @items = Item.all
