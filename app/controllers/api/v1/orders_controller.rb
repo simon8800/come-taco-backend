@@ -22,10 +22,11 @@ class Api::V1::OrdersController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @order = Order.find_by(order_params)
     @order.destroy
   end
+
 
   private
 
