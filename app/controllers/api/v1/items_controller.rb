@@ -21,6 +21,7 @@ class Api::V1::ItemsController < ApplicationController
     @item.update(item_params)
   end
 
+
   private
 
   def item_params
