@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users
+      resources :orders
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      get '/get_items', to: 'users#get_items'
       resources :items
     end
   end

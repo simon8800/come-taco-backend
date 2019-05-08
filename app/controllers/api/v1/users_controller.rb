@@ -2,7 +2,7 @@
 
 class Api::V1::UsersController < ApplicationController
   # go to http://localhost:3000/api/v1/users
-  skip_before_action :authorized
+  before_action :authorized, only: %i[show get_items]
 
   def index
     @users = User.all
@@ -32,7 +32,11 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def profile
-    render json: { user: UserSerializer.new(current_user)}, status: :accepted
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
+  end
+
+  def get_items
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 
   private
