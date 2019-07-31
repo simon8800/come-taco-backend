@@ -2,7 +2,8 @@
 
 class Api::V1::UsersController < ApplicationController
   # go to http://localhost:3000/api/v1/users
-  before_action :authorized, only: %i[show get_items]
+  # before_action :authorized, only: %i[show get_items]
+  skip_before_action :authorized
 
   def index
     @users = User.all
@@ -29,6 +30,11 @@ class Api::V1::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+
   end
 
   def profile

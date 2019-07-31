@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
       get '/get_items', to: 'users#get_items'
       resources :items
+      resources :charges
     end
   end
 end
