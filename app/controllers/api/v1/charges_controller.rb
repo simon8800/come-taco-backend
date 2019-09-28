@@ -1,25 +1,16 @@
+require 'stripe'
 class Api::V1::ChargesController < ApplicationController
-  def new
-  end
+    skip_before_action :authorized
 
-  def create
-    # Amount in cents
-    @amount = 2500
+    def create
+        # Stripe.api_key = 'pk_test_OHsp793zkjWWR6rFPeVnf7nR00uGTVDgXk'
+        @item = Charge.create(charge_params)
+        byebug
+    end 
 
-    customer = Stripe::Customer.create(
-      :email => 'dummy@test.com',
-      :card => params[:stripeToken]
-    )
+    private
 
-    charge = Stripe::Charge.create(
-      :custoner => customer.idea,
-      :amount => @amount,
-      :description => 'Dummy test',
-      :currency => 'usd'
-    )
-
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to charges_path
-  end
+    def charge_params
+        params.permit(:user_id, :price, :items)
+    end
 end
