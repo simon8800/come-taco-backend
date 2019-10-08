@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'stripe'
 
 class Api::V1::AuthController < ApplicationController
   skip_before_action :authorized
