@@ -10,7 +10,8 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
       get '/get_items', to: 'users#get_items'
       resources :items
-      resources :charges
+      resources :charges, only: [:create]
+      resources :payments, only: [:index, :create]
     end
   end
 end
