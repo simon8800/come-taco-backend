@@ -19,6 +19,7 @@ class Api::V1::ChargesController < ApplicationController
             }, {
                 :idempotency_key => ip_key
             })
+            byebug
             puts charge
         rescue Stripe::CardError => e
             render json: {message: 'Unable to process charge'}, status: :not_acceptable
