@@ -36,12 +36,10 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def profile
-
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 
   def get_items
-
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 
