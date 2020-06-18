@@ -1,11 +1,11 @@
 require 'stripe'
 require 'securerandom'
 
+# check charge_params
 class Api::V1::ChargesController < ApplicationController
     skip_before_action :authorized
     def create
         Stripe.api_key = 'sk_test_636dxyrekTAzI7X1deoEMYdM005sDg5Dbu'
-        byebug
         ip_key = SecureRandom.uuid
         begin
             customer = Stripe::Customer.create({
@@ -20,7 +20,6 @@ class Api::V1::ChargesController < ApplicationController
             }, {
                 :idempotency_key => ip_key
             })
-            byebug
             puts charge
         rescue Stripe::CardError => e
             render json: {message: 'Unable to process charge'}, status: :not_acceptable
