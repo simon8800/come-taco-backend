@@ -1,6 +1,9 @@
 class Api::V1::ChargesController < ApplicationController
+    skip_before_action :authorized
+
     def create
-        puts 'Hi'
+        @charge = Charge.create(charge_params)
+        byebug
     end
 
     private

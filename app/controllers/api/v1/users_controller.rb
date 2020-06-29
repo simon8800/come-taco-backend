@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Api::V1::UsersController < ApplicationController
-  # go to http://localhost:3000/api/v1/users
   before_action :authorized, only: %i[show get_items]
   # skip_before_action :authorized
 
