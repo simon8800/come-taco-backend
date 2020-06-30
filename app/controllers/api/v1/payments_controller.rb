@@ -17,6 +17,15 @@ class Api::V1::PaymentsController < ApplicationController
             render json: {error: 'Failed to create payment'}
         end 
     end 
+
+    def payment_intent
+        @intent = Stripe::PaymentIntent.create({
+            amount: payment_params[:price],
+            currency: 'usd',
+            payment_method_types: ['card']
+        })
+        byebug
+    end
     
     private
     

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :items
       resources :charges, only: [:create]
       resources :payments, only: [:index, :create]
+      post '/secrets', to: 'payments#payment_intent'
     end
   end
 end
