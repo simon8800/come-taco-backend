@@ -7,6 +7,7 @@ class ApplicationController < ActionController::API
     JWT.encode(payload, 'secret')
   end
 
+  # For Payments auth, Not receiving Auth Header despite being sent
   def auth_header
     request.headers['Authorization']
   end

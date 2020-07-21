@@ -5,6 +5,10 @@ class Api::V1::ChargesController < ApplicationController
         byebug
     end
 
+    def payment_intent
+        byebug
+    end
+
     private
 
     def charge_params

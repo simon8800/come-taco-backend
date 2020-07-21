@@ -2,7 +2,7 @@ require 'stripe'
 require 'securerandom'
 
 class Api::V1::PaymentsController < ApplicationController
-    skip_before_action :authorized 
+    skip_before_action :authorized
 
     def index
         @items = Payment.all
@@ -20,18 +20,19 @@ class Api::V1::PaymentsController < ApplicationController
     end 
 
     def payment_intent
+        # @user = User.find(params[:user_id])
         byebug
-        @intent = Stripe::PaymentIntent.create({
-            amount: payment_params[:price],
-            currency: 'usd',
-            payment_method_types: ['card']
-        })
+        # @intent = Stripe::PaymentIntent.create({
+        #     amount: payment_params[:price],
+        #     currency: 'usd',
+        #     payment_method_types: ['card']
+        # })
         
-        if @intent.valid?
-            render json: @intent
-        else
-            render json: {error: 'Failed to create Payment Intent'}
-        end
+        # if @intent.valid?
+        #     render json: @intent
+        # else
+        #     render json: {error: 'Failed to create Payment Intent'}
+        # end
     end
     
     private
