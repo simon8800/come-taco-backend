@@ -35,18 +35,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def profile
-    
     render json: UserSerializer.new(current_user) , status: :accepted
   end
-
-  # def get_items
-  #   render json: UserSerializer.new(current_user.items) , status: :accepted
-  # end
-
-  def secrets
-
-  end
-
 
   private
 
