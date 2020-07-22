@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   before_action :authorized
   
   def encode_token(payload)
-    JWT.encode(payload, 'secret')
+    JWT.encode(payload, ENV["jwt_secret"])
   end
 
   # For Payments auth, Not receiving Auth Header despite being sent
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
     if auth_header
       token = auth_header.split(' ')[1]
       begin
-        JWT.decode(token, 'secret', true, algorithm: 'HS256')
+        JWT.decode(token, ENV["jwt_secret"], true, algorithm: 'HS256')
       rescue JWT::DecodeError
         nil
       end
@@ -35,6 +35,7 @@ class ApplicationController < ActionController::API
   end
 
   def authorized
+    byebug
     render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
   end
 end

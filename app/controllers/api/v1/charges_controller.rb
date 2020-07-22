@@ -6,6 +6,7 @@ class Api::V1::ChargesController < ApplicationController
     end
 
     def payment_intent
+        p current_user
         byebug
     end
 
