@@ -15,7 +15,17 @@ class Api::V1::ChargesController < ApplicationController
 
     def payment_intent
         grandTotal = grand_total.gsub /\D/, ""
-        # byebug
+        intent = Stripe::PaymentIntent.create({
+            amount: grandTotal.to_i,
+            currency: 'usd',
+            metadata: {integration_check: 'accept_a_payment'},
+        })
+        
+        if intent
+            render json: intent
+        else
+            render json: {error: 'Failed to create payment'}
+        end
     end
 
     private
